@@ -1,0 +1,94 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
+# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on OS X and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * https://atom.io/docs/latest/hacking-atom-debugging#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'body':
+  'alt-cmd-w': 'pane:close-other-items'
+
+'.tree-view':
+  'o': 'tree-view:open-selected-entry'
+
+'atom-workspace atom-text-editor':
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-w H': 'move-panes:move-left'
+  'ctrl-w J': 'move-panes:move-down'
+  'ctrl-w K': 'move-panes:move-up'
+  'ctrl-w L': 'move-panes:move-right'
+  'shift-cmd-e': 'related:show-related-files'
+
+'atom-workspace atom-text-editor.autocomplete-active':
+  'up': 'autocomplete-plus:move-up'
+  'down': 'autocomplete-plus:move-down'
+  'ctrl-k': 'autocomplete-plus:move-up'
+  'ctrl-j': 'autocomplete-plus:move-down'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'shift-cmd-J': 'editor:move-line-down'
+  'shift-cmd-K': 'editor:move-line-up'
+
+'atom-workspace atom-text-editor.vim-mode-plus.normal-mode':
+  ':': 'vim-mode-plus-ex-mode:open'
+  '!': 'vim-mode-plus-ex-mode:toggle-setting'
+  'g f': 'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'
+
+'atom-workspace atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'cmd-=': 'vim-mode-plus:maximize-pane'
+  'cmd-enter': 'editor:newline-below'
+  'y s': 'vim-mode-plus:surround'
+  'c s': 'vim-mode-plus:change-surround'
+  'd s': 'vim-mode-plus:delete-surround'
+  'space e': 'vim-mode-plus-user:move-to-end-of-subword'
+  'space b': 'vim-mode-plus-user:move-to-beginning-of-subword'
+  'space w': 'vim-mode-plus-user:move-to-next-subword'
+  'ctrl-o': 'cursor-history:prev-within-editor'
+  'ctrl-i': 'cursor-history:next-within-editor'
+  'ctrl-cmd-o': 'cursor-history:prev'
+  'ctrl-cmd-i': 'cursor-history:next'
+  'g ;': 'goto-last-edit:back'
+  'g ,': 'goto-last-edit:forward'
+
+'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'g /': 'lazy-motion:forward'
+  'g ?': 'lazy-motion:backward'
+
+'atom-text-editor.lazy-motion':
+  ';': 'lazy-motion:forward'
+  ',': 'lazy-motion:backward'
+
+'atom-text-editor.vim-mode-plus.visual-mode, atom-text-editor.vim-mode-plus.operator-pending-mode':
+  'i space w': 'vim-mode-plus-user:inner-subword'
+  'a space w': 'vim-mode-plus-user:inner-subword'

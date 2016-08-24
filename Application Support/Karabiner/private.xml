@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+		<name>Map Caps Lock to Control in Terminal</name>
+		<identifier>private.app_terminal_caps_lock</identifier>
+		<only>TERMINAL</only>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, ModifierFlag::FN, KeyCode::CAPSLOCK</autogen>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CONTROL_L</autogen>
+	</item>
+	<item>
+		<name>Map Caps Lock to Control in Atom</name>
+		<identifier>private.app_atom_caps_lock</identifier>
+		<only>Atom</only>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, ModifierFlag::FN, KeyCode::CAPSLOCK</autogen>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CONTROL_L</autogen>
+	</item>
+	<item>
+		<name>Map Caps Lock to Control in Chrome</name>
+		<identifier>private.app_chrome_caps_lock</identifier>
+		<only>GOOGLE_CHROME</only>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, ModifierFlag::FN, KeyCode::CAPSLOCK</autogen>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CONTROL_L</autogen>
+	</item>
+</root>

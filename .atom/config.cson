@@ -1,0 +1,32 @@
+"*":
+  "autoclose-html":
+    makeNeverCloseSelfClosing: false
+  "autocomplete-plus":
+    useCoreMovementCommands: false
+  core:
+    packagesWithKeymapsDisabled: [
+      "emmet"
+    ]
+  editor: {}
+  linter: {}
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+  related:
+    onlyShowCreateIfNoResults: true
+    openSingleItemAutomatically: true
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    flashOnOperate: false
+    flashOnSearch: false
+    flashOnUndoRedo: false
+    highlightSearch: true
+    incrementalSearch: true
+  welcome:
+    showOnStartup: false

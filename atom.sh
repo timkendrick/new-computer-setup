@@ -1,3 +1,5 @@
+set -e
+
 if [ -e ~/.atom/config.cson ]; then
   echo "Merging Atom configuration..."
   npm install -g cson lodash.merge

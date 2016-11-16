@@ -1,3 +1,5 @@
+set -e
+
 echo "Setting preferences..."
 source ./Preferences/system.sh
 source ./Preferences/Finder.sh

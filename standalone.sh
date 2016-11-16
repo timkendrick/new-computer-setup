@@ -1,3 +1,5 @@
+set -e
+
 echo "Creating temporary directory for standalone apps..."
 mkdir -p $TMPDIR/Applications
 

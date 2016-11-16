@@ -4,7 +4,7 @@ source ./Preferences/Finder.sh
 source ./Preferences/Terminal.sh
 source ./Preferences/TextEdit.sh
 source ./Preferences/Safari.sh
-source ./Preferences/Seil.s
+source ./Preferences/Seil.sh
 source ./Preferences/Karabiner.sh
 
 echo "Reloading preferences..."

@@ -9,10 +9,10 @@ brew cask install the-unarchiver
 brew cask install namechanger
 brew cask install atom
 brew cask install sketch
-brew cask install fluid
 brew cask install tower
 brew cask install spotify
-brew cask install sizeup
+brew cask install macdown
+brew cask install spectacle
 brew cask install karabiner
 brew cask install seil
 brew cask install zeplin

@@ -69,11 +69,9 @@ for process in "SystemUIServer" "Finder"; do
 done
 
 echo "Creating standalone apps..."
-npm install -g nativefier
 mkdir -p .tmp/Applications/Google\ Docs
 nativefier --name "Google Docs" --icon ./Icons/Google\ Docs.icns https://docs.google.com/ ./.tmp/Applications/Google\ Docs
 cp -r "$(find .tmp/Applications/Google\ Docs -name "Google Docs.app")" /Applications/
-npm uninstall -g nativefier
 
 echo "Removing temporary files..."
 rm -rf .tmp

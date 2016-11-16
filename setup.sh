@@ -21,8 +21,13 @@ fi
 echo "Installing software updates..."
 softwareupdate --install --recommended
 
-echo "Installing OS X command-line tools..."
-xcode-select –-install
+if [ "$(xcode-select --print-path)" ]
+then
+  echo "OS X command-line tools already installed"
+else
+  echo "Installing OS X command-line tools..."
+  xcode-select –-install
+fi
 
 echo "Installing Homebrew apps..."
 source ./brew.sh

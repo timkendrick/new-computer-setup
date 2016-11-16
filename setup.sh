@@ -22,7 +22,7 @@ echo "Installing software updates..."
 softwareupdate --install --recommended
 
 echo "Installing OS X command-line tools..."
-xcode-select –install
+xcode-select –-install
 
 echo "Installing Homebrew apps..."
 source ./brew.sh

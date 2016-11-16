@@ -48,10 +48,7 @@ echo "Setting atom configuration..."
 source ./atom.sh
 
 echo "Copying dotfiles..."
-cp ./dotfiles/.inputrc ~/.inputrc
-cp ./dotfiles/.gitignore  ~/.gitignore
-git config --global core.excludesfile ~/.gitignore
-git config --global credential.helper osxkeychain
+source ./dotfiles.sh
 
 echo "Creating Sites directory..."
 mkdir ~/Sites

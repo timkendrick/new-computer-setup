@@ -1,3 +1,6 @@
+# Show hidden files
+defaults write NSGlobalDomain AppleShowAllFiles -bool true
+
 # Expand save panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true

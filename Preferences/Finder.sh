@@ -1,6 +1,3 @@
-# Show hidden files
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
 # Disable warning when changing file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 

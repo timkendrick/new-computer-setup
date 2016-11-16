@@ -10,7 +10,7 @@ source ./Preferences/Karabiner.sh
 echo "Reloading preferences..."
 killall cfprefsd
 for process in "SystemUIServer" "Finder"; do
-	killall "${process}" > /dev/null 2>&1
+  killall "${process}" > /dev/null 2>&1
 done
 
 if [ -d ~/Sites ]; then

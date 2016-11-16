@@ -1,4 +1,5 @@
 brew install node
+brew install mas
 
 brew cask install google-chrome
 brew cask install google-drive

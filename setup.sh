@@ -20,14 +20,14 @@ fi
 echo "Installing software updates..."
 softwareupdate --install --recommended
 
-echo "Installing App Store apps..."
-source ./appstore.sh
-
-echo "Accepting Xcode license..."
-xcodebuild -license accept
+echo "Installing OS X command-line tools..."
+xcode-select –install
 
 echo "Installing Homebrew..."
 source ./brew.sh
+
+echo "Installing App Store apps..."
+source ./appstore.sh
 
 echo "Installing npm packages..."
 source ./Packages/npm.sh

@@ -4,6 +4,7 @@ cd $(dirname $0)
 
 read -p "Apple ID email: " APPLE_ID_EMAIL
 read -sp "Apple ID password: " APPLE_ID_PASSWORD
+echo ""
 
 if [ -e ~/.ssh/id_rsa ]; then
   echo "SSH key already exists"

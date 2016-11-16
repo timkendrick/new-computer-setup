@@ -24,7 +24,7 @@ softwareupdate --install --recommended
 echo "Installing OS X command-line tools..."
 xcode-select –install
 
-echo "Installing Homebrew..."
+echo "Installing Homebrew apps..."
 source ./brew.sh
 
 echo "Installing App Store apps..."
@@ -39,11 +39,11 @@ source ./Packages/apm.sh
 echo "Installing AppleScript apps..."
 source ./applications.sh
 
-echo "Copying bundled services..."
-cp -r ./Services/* ~/Library/Services/
+echo "Installing services..."
+source ./services.sh
 
-echo "Copying application support files..."
-cp -r ./Application\ Support/* ~/Library/Application\ Support/
+echo "Installing application support files..."
+source ./application-support.sh
 
 echo "Setting atom configuration..."
 source ./atom.sh
@@ -51,31 +51,11 @@ source ./atom.sh
 echo "Copying dotfiles..."
 source ./dotfiles.sh
 
-echo "Creating Sites directory..."
-mkdir ~/Sites
-
 echo "Setting system preferences..."
-source ./Preferences/system.sh
-source ./Preferences/Finder.sh
-source ./Preferences/Terminal.sh
-source ./Preferences/TextEdit.sh
-source ./Preferences/Safari.sh
-source ./Preferences/Seil.s
-source ./Preferences/Karabiner.sh
+source ./preferences.sh
 
-echo "Reloading preferences..."
-killall cfprefsd
-for process in "SystemUIServer" "Finder"; do
-	killall "${process}" > /dev/null 2>&1
-done
-
-echo "Creating standalone apps..."
-mkdir -p .tmp/Applications/Google\ Docs
-nativefier --name "Google Docs" --icon ./Icons/Google\ Docs.icns https://docs.google.com/ ./.tmp/Applications/Google\ Docs
-cp -r "$(find .tmp/Applications/Google\ Docs -name "Google Docs.app")" /Applications/
-
-echo "Removing temporary files..."
-rm -rf .tmp
+echo "Installing standalone apps..."
+source ./standalone.sh
 
 echo "Restarting..."
 shutdown -r now

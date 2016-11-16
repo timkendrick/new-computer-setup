@@ -13,5 +13,9 @@ for process in "SystemUIServer" "Finder"; do
 	killall "${process}" > /dev/null 2>&1
 done
 
-echo "Creating Sites directory..."
-mkdir ~/Sites
+if [ -d ~/Sites ]; then
+  echo "Sites directory already exists"
+else
+  echo "Creating Sites directory..."
+  mkdir ~/Sites
+fi

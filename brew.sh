@@ -1,7 +1,11 @@
 set -e
 
-echo "Downloading and installing Homebrew..."
-command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [ $(which brew) ]; then
+  echo "Homebrew already installed"
+else
+  echo "Downloading and installing Homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 echo "Installing Cask..."
 brew tap caskroom/cask

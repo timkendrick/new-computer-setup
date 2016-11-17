@@ -68,4 +68,4 @@ echo "Installing software updates..."
 softwareupdate --install --recommended
 
 echo "Restarting..."
-shutdown -r now
+sudo shutdown -r now

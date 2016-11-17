@@ -1,24 +1,52 @@
-brew install node
-brew install mas
+set -e
 
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install dropbox
-brew cask install betterzip
-brew cask install the-unarchiver
-brew cask install namechanger
-brew cask install atom
-brew cask install sketch
-brew cask install tower
-brew cask install spotify
-brew cask install macdown
-brew cask install spectacle
-brew cask install karabiner
-brew cask install seil
-brew cask install zeplin
-brew cask install qlcolorcode
-brew cask install qlmarkdown
-brew cask install qlstephen
-brew cask install quicklook-csv
-brew cask install betterzipql
-brew cask install suspicious-package
+REQUIRED_PACKAGES=(
+  node
+  mas
+)
+
+REQUIRED_CASK_PACKAGES=(
+  google-chrome
+  google-drive
+  dropbox
+  betterzip
+  the-unarchiver
+  namechanger
+  atom
+  sketch
+  tower
+  spotify
+  macdown
+  spectacle
+  karabiner
+  seil
+  zeplin
+  qlcolorcode
+  qlmarkdown
+  qlstephen
+  quicklook-csv
+  betterzipql
+  suspicious-package
+)
+
+INSTALLED_PACKAGES=$(brew ls | tr '\n' ' ')
+INSTALLED_CASK_PACKAGES=$(brew cask ls | tr '\n' ' ')
+
+for PACKAGE in "${REQUIRED_PACKAGES[@]}"; do
+  if [[ " ${INSTALLED_PACKAGES[@]} " =~ " $PACKAGE " ]]; then
+    echo "$PACKAGE is already installed"
+  else
+    echo "Installing $PACKAGE..."
+    brew install $PACKAGE
+  fi
+done
+
+
+for PACKAGE in "${REQUIRED_CASK_PACKAGES[@]}"; do
+  if [[ " ${INSTALLED_CASK_PACKAGES[@]} " =~ " $PACKAGE " ]]; then
+    echo "$PACKAGE is already installed"
+  else
+    echo "Installing $PACKAGE..."
+    brew cask install $PACKAGE
+  fi
+done

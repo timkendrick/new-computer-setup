@@ -32,6 +32,11 @@ fi
 echo "Installing Homebrew apps..."
 source ./brew.sh
 
+mas account >/dev/null || {
+  echo "Signing into App Store..."
+  mas signin "$APPLE_ID_EMAIL" "$APPLE_ID_PASSWORD"
+}
+
 echo "Installing App Store apps..."
 source ./appstore.sh
 

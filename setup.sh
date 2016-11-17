@@ -18,9 +18,6 @@ else
   ssh-keygen -t rsa -C "$SSH_EMAIL" -P "$SSH_PASSPHRASE" -f ~/.ssh/id_rsa
 fi
 
-echo "Installing software updates..."
-softwareupdate --install --recommended
-
 if [ "$(xcode-select --print-path)" ]
 then
   echo "OS X command-line tools already installed"
@@ -66,6 +63,9 @@ source ./preferences.sh
 
 echo "Installing standalone apps..."
 source ./standalone.sh
+
+echo "Installing software updates..."
+softwareupdate --install --recommended
 
 echo "Restarting..."
 shutdown -r now

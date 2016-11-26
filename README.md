@@ -1,5 +1,5 @@
 ## Installation
 
 ```bash
-sudo ./setup.sh
+./setup.sh
 ```
